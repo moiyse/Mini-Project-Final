@@ -1,0 +1,94 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+    <div class="app-main__inner">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div class="container emp-profile">
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="profile-img">
+                                        <img  src="https://cdn3.iconfinder.com/data/icons/business-and-management-without-backround-set-1/145/12-512.png" style="width:80px; height:80px" alt=""/>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="profile-head">
+                                                <h5>
+                                                  {{student.prenomE}}  {{student.nomE}}
+                                                </h5>
+
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <button [routerLink]="['/contrat/list',id]" class="profile-edit-btn" >view contrats</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="tab-content profile-tab" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>FirstName :</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>{{student.nomE}}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Lastname :</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>{{student.prenomE}}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Option :</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>{{student.option}}</p>
+                                                        </div>
+                                                    </div>
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                              <label>Contrat numbers :</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <p>{{contratCount}}</p>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                              <label>University Name :</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <p>{{university.nomUniv}}</p>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div style="margin-top : 30px" [ngStyle]="{'border-top':'1px solid #dee2e6'}"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                </div>
+            </div>
+        </div>
+    </div>

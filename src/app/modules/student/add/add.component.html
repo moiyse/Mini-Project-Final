@@ -1,0 +1,41 @@
+
+
+
+<div class="card mt-2">
+  <div class="card-body">
+    <form  #f="ngForm" (ngSubmit)="notifparent(student);f.reset()">
+
+      <div class="position-relative form-group"><label for="nomE" class="">Nom</label>
+        <input class="form-control" type="text"  name="nomE"  placeholder="Taper votre nom" [(ngModel)]="student.nomE" required #nomE="ngModel"  minlength="3">
+        <small id="nomE" class="form-text text-muted" *ngIf="nomE.errors?.['required'] && nomE.touched">Firstname is required</small>
+        <small class="form-text text-muted" *ngIf="nomE.errors?.['minlength'] && nomE.touched">Firstname min length</small>
+      </div>
+      <div class="position-relative form-group"><label for="prenomE" class="">Prenom</label>
+        <input class="form-control" type="text" name="prenomE"  placeholder="Taper votre prenom" [(ngModel)]="student.prenomE" required #prenomE="ngModel"  minlength="3">
+        <small id="prenomE" class="form-text text-muted" *ngIf="prenomE.errors?.['required'] && prenomE.touched">Firstname is required</small>
+        <small id="option" class="form-text text-muted" *ngIf="prenomE.errors?.['minlength']">Oprion min length 3 required</small>
+
+      </div>
+
+      <div class="position-relative form-group"><label for="equipe" class="">Select a team </label>
+        <select name="select"  class="form-control" id="equipe" name="equipe" [(ngModel)]="student.id_team"
+                required
+                #equipe="ngModel">
+          <option *ngFor="let equipe of equipes" value="{{equipe.id}}">{{equipe.nomEquipe}}</option>
+          <small  class="form-text text-muted" *ngIf="equipe.errors?.['required']">eeroooooooooor</small>
+
+        </select>
+      </div>
+
+      <div class="position-relative form-group"><label for="option" class="">Option</label>
+        <input class="form-control" type="text" name="option"  placeholder="option" [(ngModel)]="student.option" required #option="ngModel"  minlength="3">
+        <small  class="form-text text-muted" *ngIf="option.errors?.['required'] && option.touched">Oprion is required</small>
+        <small  class="form-text text-muted" *ngIf="option.errors?.['minlength']">Oprion min length 3 required</small>
+
+      </div>
+
+
+      <button type="submit" class="mt-1 btn btn-primary" [disabled]="f.invalid">Submit</button>
+    </form>
+  </div>
+</div>
